@@ -1,0 +1,15 @@
+game.exe:   quest-driver.o
+	g++ game.o board.o quest-driver.o -o game.exe
+
+quest-driver.o: game.o board.o
+	g++ -c quest-driver.cpp -o quest-driver.o
+
+board.o: board.cpp
+	g++ -c board.cpp -o board.o
+
+game.o: game.cpp
+	g++ -c game.cpp -o game.o
+
+clean:
+	rm *.o
+	rm *.exe
